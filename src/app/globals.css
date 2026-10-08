@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070a0b;
+  --color-panel: #0d1214;
+  --color-panel-2: #121a1d;
+  --color-line: #1d272b;
+  --color-ink: #d8e2e6;
+  --color-dim: #7c8d95;
+  --color-up: #3ef08a;
+  --color-down: #ff5c6c;
+  --color-warn: #f5c542;
+  --color-info: #5cc8ff;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-up) 30%, transparent);
+}
+
+.panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-panel-2);
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn:hover:not(:disabled) {
+  border-color: var(--color-dim);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-up {
+  background: color-mix(in srgb, var(--color-up) 18%, transparent);
+  border-color: color-mix(in srgb, var(--color-up) 55%, transparent);
+  color: var(--color-up);
+}
+.btn-down {
+  background: color-mix(in srgb, var(--color-down) 16%, transparent);
+  border-color: color-mix(in srgb, var(--color-down) 55%, transparent);
+  color: var(--color-down);
+}
+
+.input {
+  width: 100%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 0.45rem 0.6rem;
+  outline: none;
+}
+.input:focus {
+  border-color: var(--color-info);
+}
+
+.label {
+  display: block;
+  color: var(--color-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+
+table.grid-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table.grid-table th {
+  text-align: left;
+  color: var(--color-dim);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--color-line);
+  white-space: nowrap;
+}
+table.grid-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-line) 60%, transparent);
+  white-space: nowrap;
+}
+table.grid-table tr:hover td {
+  background: var(--color-panel-2);
+}
+
+/* wallet-adapter button, restyled to match */
+.wallet-adapter-button-trigger {
+  background: var(--color-panel-2) !important;
+  border: 1px solid var(--color-line) !important;
+  height: 34px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+  border-radius: 4px !important;
+}
